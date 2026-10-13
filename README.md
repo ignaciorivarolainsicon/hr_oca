@@ -1,51 +1,40 @@
+# Módulos OCA para el pañol de InSiCon
 
-[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/hr&target_branch=19.0)
-[![Pre-commit Status](https://github.com/OCA/hr/actions/workflows/pre-commit.yml/badge.svg?branch=19.0)](https://github.com/OCA/hr/actions/workflows/pre-commit.yml?query=branch%3A19.0)
-[![Build Status](https://github.com/OCA/hr/actions/workflows/test.yml/badge.svg?branch=19.0)](https://github.com/OCA/hr/actions/workflows/test.yml?query=branch%3A19.0)
-[![codecov](https://codecov.io/gh/OCA/hr/branch/19.0/graph/badge.svg)](https://codecov.io/gh/OCA/hr)
-[![Translation Status](https://translation.odoo-community.org/widgets/hr-19-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/hr-19-0/?utm_source=widget)
+Esta rama del fork de [OCA/hr](https://github.com/OCA/hr) conserva los módulos
+seleccionados para desarrollar y probar el pañol de InSiCon en Odoo 19.
 
-<!-- /!\ do not modify above this line -->
+| Addon | Versión | Función |
+| --- | --- | --- |
+| [hr_personal_equipment_request](hr_personal_equipment_request/) | 19.0.1.0.0 | Solicitudes y asignaciones de equipamiento a empleados. |
+| [hr_personal_equipment_stock](hr_personal_equipment_stock/) | 19.0.1.0.0 | Integración de las asignaciones con Inventario. |
+| [hr_employee_ppe](hr_employee_ppe/) | 19.0.1.0.0 | Información, vencimientos y comprobantes de EPP. |
 
-# hr
+## Dependencias
 
-hr
+Los módulos requieren los addons estándar `product`, `hr`, `mail`, `purchase`
+y `stock`, además de las dependencias entre los tres módulos incluidos.
+Sus manifiestos no declaran dependencias externas de Python.
 
-<!-- /!\ do not modify below this line -->
+`hr_personal_equipment_stock` tiene instalación automática cuando sus
+dependencias están instaladas.
 
-<!-- prettier-ignore-start -->
+## Estado de la adaptación
 
-[//]: # (addons)
+El código proviene de Odoo 18. Los manifiestos se actualizaron a `19.0.1.0.0`
+para permitir su evaluación en Odoo 19. La compatibilidad del código y los
+circuitos funcionales todavía requieren adaptación y validación.
 
-Available addons
-----------------
-addon | version | maintainers | summary
---- | --- | --- | ---
-[hr_course](hr_course/) | 19.0.1.0.0 |  | This module allows your to manage employee's training courses
-[hr_department_code](hr_department_code/) | 19.0.1.0.0 |  | HR department code
-[hr_employee_age](hr_employee_age/) | 19.0.1.0.0 |  | Age field for employee
-[hr_employee_calendar_planning](hr_employee_calendar_planning/) | 19.0.1.2.2 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> | Employee Calendar Planning
-[hr_employee_document](hr_employee_document/) | 19.0.1.0.0 |  | Documents attached to the employee profile
-[hr_employee_firstname](hr_employee_firstname/) | 19.0.1.1.1 | <a href='https://github.com/Savoir-faire Linux'><img src='https://github.com/Savoir-faire Linux.png' width='32' height='32' style='border-radius:50%;' alt='Savoir-faire Linux'/></a> <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Adds First Name to Employee
-[hr_employee_language](hr_employee_language/) | 19.0.1.0.0 |  | HR Employee Language
-[hr_employee_medical_examination](hr_employee_medical_examination/) | 19.0.1.0.0 |  | Adds information about employee's medical examinations
-[hr_employee_partner_external](hr_employee_partner_external/) | 19.0.1.0.0 |  | Associate an external Partner to Employee
-[hr_employee_relative](hr_employee_relative/) | 19.0.1.0.0 |  | Allows storing information about employee's family
-[hr_employee_second_lastname](hr_employee_second_lastname/) | 19.0.1.0.1 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Split Name in First Name, Father's Last Name and Mother's Last Name
+Se conservan las pruebas, traducciones, documentación y atribuciones originales
+de cada addon para acompañar ese trabajo.
 
-[//]: # (end addons)
+## Uso en el proyecto
 
-<!-- prettier-ignore-end -->
+El proyecto `odoo_sh_base` incorpora este fork como submódulo en `oca/hr`,
+asociado a la rama `19.0_pañol`. Cada publicación del fork requiere actualizar
+y publicar también la referencia del submódulo en el proyecto.
 
-## Licenses
+## Licencia y procedencia
 
-This repository is licensed under [AGPL-3.0](LICENSE).
-
-However, each module can have a totally different license, as long as they adhere to Odoo Community Association (OCA)
-policy. Consult each module's `__manifest__.py` file, which contains a `license` key
-that explains its license.
-
-----
-OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit
-organization whose mission is to support the collaborative development of Odoo features
-and promote its widespread use.
+Los tres módulos declaran licencia AGPL-3. Se conserva el archivo [LICENSE](LICENSE)
+y los avisos de autoría originales. Los módulos proceden de la
+[Odoo Community Association (OCA)](https://odoo-community.org/).
