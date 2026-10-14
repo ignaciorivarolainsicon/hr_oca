@@ -102,7 +102,7 @@
                 <field name="state" />
                 <field name="employee_id" groups="hr.group_hr_user" />
                 <field name="product_id" />
-                <group expand="0" name="group_by" string="Group By">
+                <group name="group_by">
                     <filter
                         name="filter_state"
                         string="State"
